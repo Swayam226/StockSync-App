@@ -52,14 +52,32 @@ function LandingPage() {
       alert('Upload failed. See console for details.');
     }
   };
-  
+
+  const handleLogout = () => {
+    navigate('/');
+  };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-blue-600 to-green-500 p-4">
-      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-4xl">
-        <h1 className="text-2xl font-bold text-blue-600 mb-6 text-center">Supply Chain Dashboard Upload</h1>
+    <div className="flex flex-col items-center justify-start min-h-screen bg-gradient-to-r from-blue-600 to-green-500 p-8">
+      {/* Title and Tagline */}
+      <div className="text-center mb-6">
+        <h1 className="text-7xl font-extrabold text-white">StockSync</h1>
+        <p className="text-4xl pt-5 pb-5 font-semibold text-gray-200">Elevate your supply chain <br />management with our accurate insights</p>
+      </div>
 
-        <div className="mb-6">
+      {/* Main Card */}
+      <div className="relative bg-white p-8 rounded-lg shadow-md w-[calc(100vw-3rem)] h-115">
+        {/* Logout Button */}
+        <button
+          onClick={handleLogout}
+          className="absolute top-4 right-4 bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded"
+        >
+          Logout
+        </button>
+
+        <h1 className="text-3xl font-bold text-blue-600 mb-6 text-center">StockSync File Upload</h1>
+
+        <div className="mb-6 pt-8">
           <label htmlFor="csvUpload" className="block text-gray-700 text-sm font-bold mb-2">
             Upload CSV
           </label>

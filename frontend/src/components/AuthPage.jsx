@@ -17,7 +17,7 @@ function AuthPage() {
 
   return (
     <div className=" h-screen w-screen flex items-center justify-center bg-gradient-to-r from-blue-600 to-green-500 p-4">
-      <div className="bg white backdrop-blur p-8 rounded-lg shadow-md w-full max-w-md text-center ">
+      <div className="bg-gradient-to-r from-blue-600 to-green-500 backdrop-blur-md p-8 rounded-xl shadow-xl w-full max-w-md text-center text-white">
         <h1 className="text-3xl font-extrabold text-gray-800 mb-4">User Login</h1>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
