@@ -32,7 +32,7 @@ function LandingPage() {
     formData.append('file', csvFile);
 
     try {
-      setProgress(20);
+      setProgress(50);
       await axios.post('http://localhost:5000/api', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
         onUploadProgress: (progressEvent) => {
@@ -66,14 +66,8 @@ function LandingPage() {
       </div>
 
       {/* Main Card */}
-      <div className="relative bg-white p-8 rounded-lg shadow-md w-[calc(100vw-3rem)] h-115">
-        {/* Logout Button */}
-        <button
-          onClick={handleLogout}
-          className="absolute top-4 right-4 bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded"
-        >
-          Logout
-        </button>
+      <div className="relative bg-white p-8 rounded-lg shadow-md w-135 h-95 flex flex-col">
+        
 
         <h1 className="text-3xl font-bold text-blue-600 mb-6 text-center">StockSync File Upload</h1>
 
@@ -90,7 +84,7 @@ function LandingPage() {
           />
         </div>
 
-        {csvData && (
+        {/* {csvData && (
           <div className="mt-6">
             <h2 className="text-xl font-semibold mb-4 text-gray-800">Data Preview</h2>
             <div className="overflow-x-auto max-h-64">
@@ -114,15 +108,26 @@ function LandingPage() {
               </table>
             </div>
           </div>
-        )}
+        )} */}
 
         <button
           onClick={handleSubmit}
           disabled={!csvFile}
-          className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-6 w-full sm:w-auto"
+          className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-4 w-full sm:w-auto"
         >
           Submit
         </button>
+
+        <div className="flex items-center justify-center mt-2">
+        {/* Logout Button */}
+        <button
+          onClick={handleLogout}
+          className="mt-6 top-4 right-4 bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-sm items-center w-30"
+        >
+          Logout
+        </button>
+
+        </div>
 
         {progress > 0 && progress < 100 && (
           <div className="w-full bg-gray-200 rounded-full h-4 mt-4">
